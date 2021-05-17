@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 58ccdfe2724f16b468c9c5157ed75af0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - NormalBlocks: {fileID: 6906626738340096159, guid: 16099802c2f1f564787f4380299bb46c,
+      type: 3}
+  - DirtBlocks: {fileID: 671948358486800930, guid: d91c0ff7b98b37346879f44ac7358725,
+      type: 3}
+  - FireBlocks: {fileID: 1872344460225370840, guid: 8dfafc0f56e9fc240a89b03e99cad065,
+      type: 3}
+  - WaterBlocks: {fileID: 8823287438772033484, guid: 01e16a3a834b1174a8f0ee35c9ac0699,
+      type: 3}
+  - AirBlocks: {fileID: 6009544935557374751, guid: ebce636967d74aa4987c9829d55641f6,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
