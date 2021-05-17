@@ -71,6 +71,10 @@ public class BallController : MonoBehaviour
                 axis.x = 0;
             }
         }
+        else if (collision.gameObject.tag == "Limit")
+        {
+            axis.y *= -1;
+        }
 
         if (speed > 0) { speed += 10; speed *= -1; }
         else { speed -= 10; speed *= -1; }
