@@ -53,30 +53,24 @@ public class BallController : MonoBehaviour
                 axis.x = 0;
             }
         }
-        else if (collision.gameObject.tag == "Block")
-        {
-            float ballX = transform.position.x;
-            float objX = collision.collider.bounds.center.x;
-            if (ballX < objX - block_margin)
-            {
-                axis.x = -0.5f;
-
-            }
-            else if (ballX > objX + block_margin)
-            {
-                axis.x = 0.5f;
-            }
-            else
-            {
-                axis.x = 0;
-            }
-        }
         else if (collision.gameObject.tag == "Limit")
         {
             axis.y *= -1;
         }
+        else
+        {
+            axis.x *= -1;
+        }
 
-        if (speed > 0) { speed += 10; speed *= -1; }
-        else { speed -= 10; speed *= -1; }
+        if (speed < 700)
+        {
+            if (speed > 0) { speed += 10; speed *= -1; }
+            else { speed -= 10; speed *= -1; }
+        }
+        else
+        {
+            speed = 700;
+        }
+        
     }
 }
