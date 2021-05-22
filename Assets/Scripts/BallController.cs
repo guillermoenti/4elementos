@@ -56,7 +56,71 @@ public class BallController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Block")
         {
+            float ballX = transform.position.x;
+            float ballY = transform.position.y;
+            float objMaxX = collision.collider.bounds.max.x;
+            float objMinX = collision.collider.bounds.min.x;
+            float objMaxY = collision.collider.bounds.max.y;
+            float objMinY = collision.collider.bounds.min.y;
+            if (ballX > objMinX && ballX < objMaxX)
+            {
+                axis.y *= -1;
+                Debug.Log("Pabjo");
+            }
+            else if (ballY > objMinY && ballY < objMaxY)
+            {
+                axis.x *= -1;
+                Debug.Log("Lado");
+            }
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "Limit")
+        {
+            axis.x *= -1;
+        }
+        else if (collision.gameObject.tag == "TopLimit")
+        {
             axis.y *= -1;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Paddle")
+        {
+            float ballX = transform.position.x;
+            float objX = collision.GetComponent<BoxCollider2D>().bounds.center.x;
+            if (ballX < objX - paddle_margin)
+            {
+                axis.y *= -1;
+                axis.x = -0.5f;
+            }
+            else if (ballX > objX + paddle_margin)
+            {
+                axis.y *= -1;
+                axis.x = 0.5f;
+            }
+            else
+            {
+                axis.y *= -1;
+                axis.x = 0;
+            }
+        }
+        else if (collision.gameObject.tag == "Block")
+        {
+            float ballX = transform.position.x;
+            float ballY = transform.position.y;
+            float objMaxX = collision.GetComponent<BoxCollider2D>().bounds.max.x;
+            float objMinX = collision.GetComponent<BoxCollider2D>().bounds.min.x;
+            float objMaxY = collision.GetComponent<BoxCollider2D>().bounds.max.y;
+            float objMinY = collision.GetComponent<BoxCollider2D>().bounds.min.y;
+            if (ballX > objMinX && ballX < objMaxX)
+            {
+                axis.y *= -1;
+            }
+            else if (ballY > objMinY && ballY < objMaxY)
+            {
+                axis.x *= -1;
+            }
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag == "Limit")
