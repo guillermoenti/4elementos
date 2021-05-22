@@ -9,6 +9,7 @@ TagManager:
   - Ball
   - Lose
   - Limit
+  - TopLimit
   layers:
   - Default
   - TransparentFX

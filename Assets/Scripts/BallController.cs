@@ -11,7 +11,6 @@ public class BallController : MonoBehaviour
 
     float speed = 300.0f;
     float paddle_margin = 28f;
-    float block_margin = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,53 +34,36 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (speed < 700)
-        {
-            if (speed > 0) { speed += 10; speed *= -1; }
-            else { speed -= 10; speed *= -1; }
-        }
-        else
-        {
-            speed = 700;
-        }
-
         if (collision.gameObject.tag == "Paddle")
         {
             float ballX = transform.position.x;
             float objX = collision.collider.bounds.center.x;
-            float objY = collision.collider.bounds.center.y;
             if (ballX < objX - paddle_margin)
             {
+                axis.y *= -1;
                 axis.x = -0.5f;
             }
             else if (ballX > objX + paddle_margin)
             {
+                axis.y *= -1;
                 axis.x = 0.5f;
             }
             else
             {
+                axis.y *= -1;
                 axis.x = 0;
             }
-
-            if (ballX < objY - paddle_margin)
-            {
-                axis.y = -1f;
-            }
-            else if (ballX > objY + paddle_margin)
-            {
-                axis.y = 1f;
-            }
-            /*else
-            {
-                axis.y = 1;
-            }*/
         }
         else if (collision.gameObject.tag == "Block")
         {
+            axis.y *= -1;
             Destroy(collision.gameObject);
-            axis.x *= -1;
         }
         else if (collision.gameObject.tag == "Limit")
+        {
+            axis.x *= -1;
+        }
+        else if (collision.gameObject.tag == "TopLimit")
         {
             axis.y *= -1;
         }
