@@ -10,7 +10,7 @@ public class BallController : MonoBehaviour
     Vector2 movement;
 
     float speed = 300.0f;
-    float paddle_margin = 30f;
+    float paddle_margin = 28f;
     float block_margin = 10f;
 
     // Start is called before the first frame update
@@ -35,33 +35,6 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Paddle")
-        {
-            float ballX = transform.position.x;
-            float objX = collision.collider.bounds.center.x;
-            if (ballX < objX - paddle_margin)
-            {
-                axis.x = -0.5f;
-
-            }
-            else if (ballX > objX + paddle_margin)
-            {
-                axis.x = 0.5f;
-            }
-            else
-            {
-                axis.x = 0;
-            }
-        }
-        else if (collision.gameObject.tag == "Limit")
-        {
-            axis.y *= -1;
-        }
-        else
-        {
-            axis.x *= -1;
-        }
-
         if (speed < 700)
         {
             if (speed > 0) { speed += 10; speed *= -1; }
@@ -71,6 +44,46 @@ public class BallController : MonoBehaviour
         {
             speed = 700;
         }
-        
+
+        if (collision.gameObject.tag == "Paddle")
+        {
+            float ballX = transform.position.x;
+            float objX = collision.collider.bounds.center.x;
+            float objY = collision.collider.bounds.center.y;
+            if (ballX < objX - paddle_margin)
+            {
+                axis.x = -0.5f;
+            }
+            else if (ballX > objX + paddle_margin)
+            {
+                axis.x = 0.5f;
+            }
+            else
+            {
+                axis.x = 0;
+            }
+
+            if (ballX < objY - paddle_margin)
+            {
+                axis.y = -1f;
+            }
+            else if (ballX > objY + paddle_margin)
+            {
+                axis.y = 1f;
+            }
+            /*else
+            {
+                axis.y = 1;
+            }*/
+        }
+        else if (collision.gameObject.tag == "Block")
+        {
+            Destroy(collision.gameObject);
+            axis.x *= -1;
+        }
+        else if (collision.gameObject.tag == "Limit")
+        {
+            axis.y *= -1;
+        }
     }
 }

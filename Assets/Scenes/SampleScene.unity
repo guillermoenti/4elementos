@@ -3020,6 +3020,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1180352003}
     m_Modifications:
+    - target: {fileID: 6906626736758414247, guid: 16099802c2f1f564787f4380299bb46c,
+        type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906626736758414247, guid: 16099802c2f1f564787f4380299bb46c,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906626736758414247, guid: 16099802c2f1f564787f4380299bb46c,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6906626738340096153, guid: 16099802c2f1f564787f4380299bb46c,
         type: 3}
       propertyPath: m_RootOrder

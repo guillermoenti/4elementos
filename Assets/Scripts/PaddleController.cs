@@ -13,7 +13,7 @@ public class PaddleController : MonoBehaviour
     KeyCode leftButton = KeyCode.LeftArrow;
     KeyCode rightButton = KeyCode.RightArrow;
 
-    float speed = 200.0f;
+    float speed = 300.0f;
 
     private void Awake()
     {
