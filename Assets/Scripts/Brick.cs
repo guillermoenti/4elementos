@@ -16,13 +16,9 @@ public class Brick : MonoBehaviour
         
     }
 
-    protected virtual void HitBehaviour()
+    public virtual void HitBehaviour()
     {
-
+        
     }
 
-    public virtual void GetHit()
-    {
-        HitBehaviour();
-    }
 }

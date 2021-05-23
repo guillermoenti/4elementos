@@ -65,14 +65,14 @@ public class BallController : MonoBehaviour
             if (ballX > objMinX && ballX < objMaxX)
             {
                 axis.y *= -1;
-                Debug.Log("Pabjo");
+                
             }
             else if (ballY > objMinY && ballY < objMaxY)
             {
                 axis.x *= -1;
-                Debug.Log("Lado");
+                
             }
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Brick>().HitBehaviour();
         }
         else if (collision.gameObject.tag == "Limit")
         {

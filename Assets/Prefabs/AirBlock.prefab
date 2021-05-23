@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6009544935557374750}
   - component: {fileID: 6009544934843349046}
   - component: {fileID: 6009544934843349045}
+  - component: {fileID: -5792591008475901191}
   m_Layer: 0
   m_Name: AirBlock
   m_TagString: Block
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 32, y: 32}
   m_EdgeRadius: 0
+--- !u!114 &-5792591008475901191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009544935557374751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e601ec91e7f70a4683915e1e6833549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

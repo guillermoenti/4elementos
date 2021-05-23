@@ -19,10 +19,11 @@ public class EarthBrick : Brick
         
     }
 
-    protected override void HitBehaviour()
+    public override void HitBehaviour()
     {
-        rb2d.bodyType = RigidbodyType2D.Dynamic;
-        rb2d.mass = 100;
+        //rb2d.bodyType = RigidbodyType2D.Dynamic;
+        //rb2d.mass = 100;
+        Debug.Log("Tierra");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

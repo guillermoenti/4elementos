@@ -16,9 +16,9 @@ public class FireBrick : Brick
         
     }
 
-    protected override void HitBehaviour()
+    public override void HitBehaviour()
     {
-       
+        Debug.Log("Fuego");
     }
 
 }

@@ -15,4 +15,9 @@ public class AirBrick : Brick
     {
         
     }
+
+    public override void HitBehaviour()
+    {
+        
+    }
 }

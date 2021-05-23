@@ -15,4 +15,9 @@ public class WaterBrick : Brick
     {
         
     }
+
+    public override void HitBehaviour()
+    {
+        
+    }
 }

@@ -16,7 +16,7 @@ public class NormalBrick : Brick
         
     }
 
-    protected override void HitBehaviour()
+    public override void HitBehaviour()
     {
         Destroy(this);
     }
