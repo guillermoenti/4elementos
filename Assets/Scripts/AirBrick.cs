@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AirBrick : Brick
 {
+    [SerializeField] PaddleController Paddle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class AirBrick : Brick
 
     public override void HitBehaviour()
     {
-        Debug.Log("Aire");
+        Paddle.is_light = true;
         Destroy(gameObject);
     }
 }

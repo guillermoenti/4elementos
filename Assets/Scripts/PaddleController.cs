@@ -7,7 +7,9 @@ public class PaddleController : MonoBehaviour
     Rigidbody2D rigidBody;
     BoxCollider2D boxCollider;
 
-    [SerializeField] GameObject FollowParticles;
+    [SerializeField] GameObject FollowLeft;
+    [SerializeField] GameObject FollowRight;
+
     GameObject part;
 
     Vector2 axis;
@@ -21,9 +23,8 @@ public class PaddleController : MonoBehaviour
     float y;
     float z;
     float speed = 300.0f;
+    float timer;
     public bool is_light;
-    bool printparticles;
-
 
     private void Awake()
     {
@@ -34,39 +35,48 @@ public class PaddleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        is_light = true;
-        printparticles = true;
+        is_light = false;
         maxX = boxCollider.bounds.max.x;
         minX = boxCollider.bounds.min.x;
         y = boxCollider.bounds.max.y;
         z = 0;
+        timer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (is_light)
+        {
+            timer += Time.deltaTime;
+            if (timer > 5)
+            {
+                is_light = false;
+                timer = 0;
+            }
+        }
+
         if (Input.GetKey(leftButton))
         {
             axis.x = -1;
-            if (is_light && printparticles)
+            if (is_light)
             {
-                part = Instantiate(FollowParticles, new Vector3(maxX, y, z), Quaternion.Euler(0, 0, 0));
-                printparticles = false;
+                FollowLeft.GetComponent<ParticleSystem>().Play();
             }
         }
         else if (Input.GetKey(rightButton))
         {
             axis.x = 1;
-            if (is_light && printparticles)
+            if (is_light)
             {
-                part = Instantiate(FollowParticles, new Vector3(minX, y, z), Quaternion.Euler(0, 0, 0));
-                printparticles = false;
+                FollowRight.GetComponent<ParticleSystem>().Play();
             }
         }
         else 
         { 
             axis.x = 0;
-            Destroy(part, 3);
+            FollowRight.GetComponent<ParticleSystem>().Stop();
+            FollowLeft.GetComponent<ParticleSystem>().Stop();
         }
     }
 
