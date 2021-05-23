@@ -19,6 +19,7 @@ public class WaterBrick : Brick
     public override void HitBehaviour()
     {
         Debug.Log("Agua");
+        GameManager.Instance.GetHealed();
         Destroy(gameObject);
     }
 }
