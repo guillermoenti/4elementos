@@ -6,6 +6,12 @@ public class FireBrick : Brick
 {
     BoxCollider2D boxCollider;
     [SerializeField] GameObject Burst_particles;
+
+    private void Awake()
+    {
+        boxCollider = GetComponent<BoxCollider2D>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
