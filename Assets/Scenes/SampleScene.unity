@@ -4824,6 +4824,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7352712755167158774, guid: d12b93fe63122764286f76e89d05c00c,
+        type: 3}
+      propertyPath: VelocityModule.x.scalar
+      value: -90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d12b93fe63122764286f76e89d05c00c, type: 3}
 --- !u!1001 &1800527313
