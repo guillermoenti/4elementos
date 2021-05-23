@@ -32,6 +32,57 @@ public class BallController : MonoBehaviour
         rigidBody.velocity = movement;
     }
 
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Paddle")
+        {
+            float ballX = transform.position.x;
+            float objX = collision.collider.bounds.center.x;
+            if (ballX < objX - paddle_margin)
+            {
+                axis.y *= -1;
+                axis.x = -0.5f;
+            }
+            else if (ballX > objX + paddle_margin)
+            {
+                axis.y *= -1;
+                axis.x = 0.5f;
+            }
+            else
+            {
+                axis.y *= -1;
+                axis.x = 0;
+            }
+        }
+        else if (collision.gameObject.tag == "Block")
+        {
+            float ballX = transform.position.x;
+            float ballY = transform.position.y;
+            float objMaxX = collision.collider.bounds.max.x;
+            float objMinX = collision.collider.bounds.min.x;
+            float objMaxY = collision.collider.bounds.max.y;
+            float objMinY = collision.collider.bounds.min.y;
+            if (ballX > objMinX && ballX < objMaxX)
+            {
+                axis.y *= -1;
+                
+            }
+            else if (ballY > objMinY && ballY < objMaxY)
+            {
+                axis.x *= -1;
+                
+            }
+            
+        }
+        else if (collision.gameObject.tag == "Limit")
+        {
+            axis.x *= -1;
+        }
+        else if (collision.gameObject.tag == "TopLimit")
+        {
+            axis.y *= -1;
+        }
+    }*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Paddle")
@@ -70,7 +121,7 @@ public class BallController : MonoBehaviour
             {
                 axis.x *= -1;
             }
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Brick>().HitBehaviour();
         }
         else if (collision.gameObject.tag == "Limit")
         {

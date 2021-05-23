@@ -18,6 +18,7 @@ public class AirBrick : Brick
 
     public override void HitBehaviour()
     {
-        
+        Debug.Log("Aire");
+        Destroy(gameObject);
     }
 }

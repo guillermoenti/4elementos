@@ -18,6 +18,7 @@ public class NormalBrick : Brick
 
     public override void HitBehaviour()
     {
-        Destroy(this);
+        Debug.Log("Normal");
+        Destroy(gameObject);
     }
 }
