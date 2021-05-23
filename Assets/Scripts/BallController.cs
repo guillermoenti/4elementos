@@ -32,7 +32,7 @@ public class BallController : MonoBehaviour
         rigidBody.velocity = movement;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Paddle")
         {
@@ -72,7 +72,7 @@ public class BallController : MonoBehaviour
                 axis.x *= -1;
                 
             }
-            collision.gameObject.GetComponent<Brick>().HitBehaviour();
+            
         }
         else if (collision.gameObject.tag == "Limit")
         {
@@ -82,7 +82,7 @@ public class BallController : MonoBehaviour
         {
             axis.y *= -1;
         }
-    }
+    }*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Paddle")
@@ -121,7 +121,7 @@ public class BallController : MonoBehaviour
             {
                 axis.x *= -1;
             }
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Brick>().HitBehaviour();
         }
         else if (collision.gameObject.tag == "Limit")
         {

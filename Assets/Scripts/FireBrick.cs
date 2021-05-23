@@ -19,6 +19,7 @@ public class FireBrick : Brick
     public override void HitBehaviour()
     {
         Debug.Log("Fuego");
+        Destroy(gameObject);
     }
 
 }

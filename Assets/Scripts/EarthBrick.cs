@@ -24,9 +24,10 @@ public class EarthBrick : Brick
         //rb2d.bodyType = RigidbodyType2D.Dynamic;
         //rb2d.mass = 100;
         Debug.Log("Tierra");
+        Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Lose")
         {
@@ -36,6 +37,6 @@ public class EarthBrick : Brick
         {
             Destroy(collision.gameObject);
         }
-    }
+    }*/
 
 }
