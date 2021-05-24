@@ -5728,17 +5728,17 @@ PrefabInstance:
     - target: {fileID: 1521938507113341335, guid: 243e2e57a5ff89b4ab4d4d12e0236df5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.721256
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1521938507113341335, guid: 243e2e57a5ff89b4ab4d4d12e0236df5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -90.3259
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1521938507113341335, guid: 243e2e57a5ff89b4ab4d4d12e0236df5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -543.65393
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1521938507113341335, guid: 243e2e57a5ff89b4ab4d4d12e0236df5,
         type: 3}
@@ -6449,7 +6449,7 @@ GameObject:
   - component: {fileID: 6906626736684227092}
   - component: {fileID: 6906626736684227093}
   m_Layer: 0
-  m_Name: NormalBlock (2)
+  m_Name: LeftLimitt
   m_TagString: Limit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

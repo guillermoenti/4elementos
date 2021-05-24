@@ -107,5 +107,9 @@ public class BallController : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+        else if (collision.gameObject.tag == "Win")
+        {
+            SceneManager.LoadScene("WinScene");
+        }
     }
 }
