@@ -6,7 +6,8 @@ public class FireBrick : Brick
 {
     BoxCollider2D boxCollider;
     [SerializeField] GameObject Burst_particles;
-
+    [SerializeField] BallController Ball;
+ 
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();

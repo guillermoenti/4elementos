@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Burst_particles: {fileID: 380429079939872705, guid: 6ec494d6d531f224a8a86eecd74312ab,
     type: 3}
+  Ball: {fileID: 6828791809758604137, guid: 9384a24c72ff25e44971a81342212e73, type: 3}
 --- !u!1001 &1581550662
 PrefabInstance:
   m_ObjectHideFlags: 0

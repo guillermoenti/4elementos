@@ -117,6 +117,7 @@ public class BallController : MonoBehaviour
         {
             gameObject.transform.position = new Vector3(0, -250, 0);
             axis.y *= -1;
+            axis.x = 0;
             paddle.position = new Vector3(0, -320, 0);
             if (GameManager.Instance.lives == 1)
             {

@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    [SerializeField] Text text_lives;
+
     const int maxLives = 3;
     public int lives;
     public int level = 0;
@@ -14,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(this);
@@ -54,7 +58,9 @@ public class GameManager : MonoBehaviour
         {
             changeLevel = false;
             SceneManager.LoadScene("WinScene");
-        }        
+        }
+
+        text_lives.text = lives.ToString();
     }
 
     public void GetHit()

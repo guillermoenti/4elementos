@@ -17,6 +17,9 @@ public class GameOver : MonoBehaviour
         hehe.enabled = false;
         is_hehe = false;
         timer = 0;
+
+        Destroy(GameManager.Instance);
+        Destroy(GameObject.Find("GameManager"));
     }
 
     private void Update()
