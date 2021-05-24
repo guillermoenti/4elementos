@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public int lives;
     public int level = 0;
 
+    public bool changeLevel;
+
     private void Awake()
     {
         if(Instance == null)
@@ -27,27 +29,30 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         lives = 3;
+        changeLevel = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lives == 0)
+        if (lives == 0 && changeLevel)
         {
-            lives = -1;
+            changeLevel = false;
             SceneManager.LoadScene("GameOver");
         }
-        if (level == 1)
+        if (level == 1 && changeLevel)
         {
+            changeLevel = false;
             SceneManager.LoadScene("Level2");
         }
-        if(level == 2)
+        if(level == 2 && changeLevel)
         {
+            changeLevel = false;
             SceneManager.LoadScene("Level3");
         }
-        if (level == 3)
+        if (level == 3 && changeLevel)
         {
-            level++;
+            changeLevel = false;
             SceneManager.LoadScene("WinScene");
         }        
     }

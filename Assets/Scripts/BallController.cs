@@ -17,7 +17,7 @@ public class BallController : MonoBehaviour
     float timer;
     public bool is_light;
 
-    private int blocksBroken;
+    public int blocksBroken;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +52,7 @@ public class BallController : MonoBehaviour
         if(blocksBroken == 66)
         {
             GameManager.Instance.level++;
+            GameManager.Instance.changeLevel = true;
             blocksBroken = 0;
         }
         
@@ -117,7 +118,12 @@ public class BallController : MonoBehaviour
             gameObject.transform.position = new Vector3(0, -250, 0);
             axis.y *= -1;
             paddle.position = new Vector3(0, -320, 0);
+            if (GameManager.Instance.lives == 1)
+            {
+                GameManager.Instance.changeLevel = true;
+            }
             GameManager.Instance.GetHit();
+
         }
     }
 }
