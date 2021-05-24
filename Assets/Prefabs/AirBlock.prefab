@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e601ec91e7f70a4683915e1e6833549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Paddle: {fileID: 7956438530114584985, guid: b9200a3ba288042478ffb37fd69fb4c9, type: 3}
+  Paddle: {fileID: 0}
   Ball: {fileID: 6828791809758604137, guid: 9384a24c72ff25e44971a81342212e73, type: 3}
   Burst_particles: {fileID: 9117628939228179079, guid: 1c8b4edca0ac69748919a6cf042e3e5f,
     type: 3}
