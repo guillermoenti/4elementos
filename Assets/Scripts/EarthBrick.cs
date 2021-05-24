@@ -71,7 +71,6 @@ public class EarthBrick : Brick
 
     private void InstanciateParticles()
     {
-       
         Instantiate(particle, new Vector3(this.box2D.bounds.center.x, this.box2D.bounds.min.y, 0), Quaternion.Euler(0, 0, 0)); 
     }
 }
