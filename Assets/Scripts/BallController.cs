@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour
 {
     Rigidbody2D rigidBody;
 
     //[SerializeField] GameObject Follow;
+    [SerializeField] Transform paddle;
 
     Vector2 axis;
     Vector2 movement;
@@ -17,6 +17,8 @@ public class BallController : MonoBehaviour
     float timer;
     public bool is_light;
 
+    private int blocksBroken;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class BallController : MonoBehaviour
         axis.x = 0;
         timer = 0;
         is_light = false;
+        blocksBroken = 0;
     }
 
     // Update is called once per frame
@@ -45,6 +48,11 @@ public class BallController : MonoBehaviour
         {
             speed = 300;
             //Follow.GetComponent<ParticleSystem>().Stop();
+        }
+        if(blocksBroken == 66)
+        {
+            GameManager.Instance.level++;
+            blocksBroken = 0;
         }
         
     }
@@ -94,6 +102,7 @@ public class BallController : MonoBehaviour
                 axis.x *= -1;
             }
             collision.gameObject.GetComponent<Brick>().HitBehaviour();
+            blocksBroken++;
         }
         else if (collision.gameObject.tag == "Limit")
         {
@@ -105,11 +114,10 @@ public class BallController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Lose")
         {
-            SceneManager.LoadScene("GameOver");
-        }
-        else if (collision.gameObject.tag == "Win")
-        {
-            SceneManager.LoadScene("WinScene");
+            gameObject.transform.position = new Vector3(0, -250, 0);
+            axis.y *= -1;
+            paddle.position = new Vector3(0, -320, 0);
+            GameManager.Instance.GetHit();
         }
     }
 }
