@@ -4012,7 +4012,7 @@ GameObject:
   - component: {fileID: 1328590397}
   - component: {fileID: 1328590396}
   m_Layer: 0
-  m_Name: WinLimit
+  m_Name: LoseLimit
   m_TagString: Lose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
