@@ -105,6 +105,25 @@ public class BallController : MonoBehaviour
             collision.gameObject.GetComponent<Brick>().HitBehaviour();
             blocksBroken++;
         }
+        else if (collision.gameObject.tag == "BlockFire")
+        {
+            float ballX = transform.position.x;
+            float ballY = transform.position.y;
+            float objMaxX = collision.GetComponent<BoxCollider2D>().bounds.max.x;
+            float objMinX = collision.GetComponent<BoxCollider2D>().bounds.min.x;
+            float objMaxY = collision.GetComponent<BoxCollider2D>().bounds.max.y;
+            float objMinY = collision.GetComponent<BoxCollider2D>().bounds.min.y;
+            if (ballX > objMinX && ballX < objMaxX)
+            {
+                axis.y *= -1;
+            }
+            else if (ballY > objMinY && ballY < objMaxY)
+            {
+                axis.x *= -1;
+            }
+            collision.gameObject.GetComponent<Brick>().HitBehaviour();
+            blocksBroken++;
+        }
         else if (collision.gameObject.tag == "Limit")
         {
             axis.x *= -1;

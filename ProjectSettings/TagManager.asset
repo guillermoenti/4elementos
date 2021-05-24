@@ -12,6 +12,7 @@ TagManager:
   - TopLimit
   - Win
   - Text
+  - BlockFire
   layers:
   - Default
   - TransparentFX

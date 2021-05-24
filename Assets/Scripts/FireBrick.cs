@@ -7,7 +7,9 @@ public class FireBrick : Brick
     BoxCollider2D boxCollider;
     [SerializeField] GameObject Burst_particles;
     [SerializeField] BallController Ball;
- 
+
+    int count;
+
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider2D>();
@@ -16,17 +18,13 @@ public class FireBrick : Brick
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        count = 0;
     }
 
     public override void HitBehaviour()
     {
+       
+
         //Instancio particulas del bloque de fuego
         Instantiate(Burst_particles, this.transform.position, Quaternion.Euler(0, 0, 0));
 
@@ -48,7 +46,6 @@ public class FireBrick : Brick
         hits = Physics2D.RaycastAll(rightPosition, Vector2.right, 40);
         CheckRaycastWithScenario(hits);
 
-
         //Destruyo el bloque de fuego
         Destroy(gameObject);
 
@@ -64,6 +61,7 @@ public class FireBrick : Brick
                 {
                     Instantiate(Burst_particles, hit.collider.gameObject.transform.position, Quaternion.Euler(0, 0, 0));
                     Destroy(hit.collider.gameObject);
+                    Ball.blocksBroken++;
                 }
             }
         }

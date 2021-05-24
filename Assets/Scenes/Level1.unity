@@ -3826,6 +3826,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 1872344460225370840, guid: 8dfafc0f56e9fc240a89b03e99cad065,
+        type: 3}
+      propertyPath: m_TagString
+      value: BlockFire
+      objectReference: {fileID: 0}
     - target: {fileID: 9091396002817732480, guid: 8dfafc0f56e9fc240a89b03e99cad065,
         type: 3}
       propertyPath: Ball

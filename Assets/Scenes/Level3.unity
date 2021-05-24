@@ -3116,6 +3116,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 2084064103794299034, guid: 9384a24c72ff25e44971a81342212e73,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2084064103794299035, guid: 9384a24c72ff25e44971a81342212e73,
         type: 3}
       propertyPath: m_RootOrder
