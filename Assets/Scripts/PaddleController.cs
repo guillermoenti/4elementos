@@ -5,12 +5,9 @@ using UnityEngine;
 public class PaddleController : MonoBehaviour
 {
     Rigidbody2D rigidBody;
-    BoxCollider2D boxCollider;
 
     [SerializeField] GameObject FollowLeft;
     [SerializeField] GameObject FollowRight;
-
-    GameObject part;
 
     Vector2 axis;
     Vector2 movement;
@@ -18,28 +15,20 @@ public class PaddleController : MonoBehaviour
     KeyCode leftButton = KeyCode.LeftArrow;
     KeyCode rightButton = KeyCode.RightArrow;
 
-    float maxX;
-    float minX;
-    float y;
-    float z;
-    float speed = 300.0f;
+    float speed;
     float timer;
     public bool is_light;
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         is_light = false;
-        maxX = boxCollider.bounds.max.x;
-        minX = boxCollider.bounds.min.x;
-        y = boxCollider.bounds.max.y;
-        z = 0;
+        speed = 300.0f;
         timer = 0;
     }
 
@@ -48,12 +37,17 @@ public class PaddleController : MonoBehaviour
     {
         if (is_light)
         {
+            speed = 500;
             timer += Time.deltaTime;
             if (timer > 5)
             {
                 is_light = false;
                 timer = 0;
             }
+        }
+        else
+        {
+            speed = 300;
         }
 
         if (Input.GetKey(leftButton))
