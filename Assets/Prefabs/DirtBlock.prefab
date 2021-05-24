@@ -145,4 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 100
   gravity: 20
-  particle: {fileID: 0}
+  particle: {fileID: 7464497843445327438, guid: a08cdd9898336fa4081b313d932c93ef,
+    type: 3}
